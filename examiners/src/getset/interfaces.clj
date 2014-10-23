@@ -33,6 +33,9 @@
                    (u/error-string result)))
     result))
 
+;;; Note to readers: See getset.examiners.stutter (or the Bouncer documentation) for
+;;; the structure of an Examiner's result.
+
 (defn certify [candidate certificate-name]
   (if-let [examiner (get examiners certificate-name)]
     (shouted-reporting candidate (examiner candidate) certificate-name)
